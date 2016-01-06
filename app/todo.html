@@ -4,22 +4,24 @@
     <br>
 <div style="margin:0 auto; width:80%;">
     
-    <form layout="row" layout-align="center center">
+    <form (ngSubmit)="onSubmit(todo.value)" layout="row" layout-align="center center">
         <md-input-container flex>
             <label for="todo">Add todo items</label>
-            <input type="text" ngControl="todo" #todo="ngForm">
+            <input md-input type="text" ngControl="todo" #todo="ngForm" required>
         </md-input-container>
-        <button md-fab class="md-icon-button md-primary md-raised" (click)="onSubmit(todo.value)" aria-label="Add">
+        <button md-fab type="submit" class="md-icon-button md-primary md-raised"  aria-label="Add">
             <i md-icon>add</i>
         </button>
     </form>
 
-    <div layout="row" layout-align="end end">
-        <div style="color:gray">{{counter}} of {{todoArr.length}} done</div>
+    <div *ngIf="todoArr.length > 0" layout="row" layout-align="end end">
+        <div style="color:gray">{{counter}} of {{todoArr.length}} remaining</div>
     </div>
     
-    <div layout="row" layout-align="start start" *ngFor="#todo of todoArr">
-        <md-checkbox (click)="exists(check.checked)" #check class="md-primary">{{todo}}</md-checkbox>
-    </div>
+    <ul style="list-style-type: none;"  layout-align="start start">
+        <li *ngFor="#todo of todoArr">
+            <md-checkbox (click)="exists(check.checked)" #check class="md-primary">{{todo}}</md-checkbox>
+        </li>
+    </ul>
    
 </div>

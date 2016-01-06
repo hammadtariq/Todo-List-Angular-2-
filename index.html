@@ -9,16 +9,15 @@
     <script src="./node_modules/rxjs/bundles/Rx.js"></script>
     <script src="./node_modules/angular2/bundles/angular2.dev.js"></script>
     
-    <link rel="stylesheet" href="https://cdn.rawgit.com/justindujardin/ng2-material/8ee9cee/dist/ng2-material.css" />
-    <link rel="stylesheet" href="https://cdn.rawgit.com/justindujardin/ng2-material/8ee9cee/dist/font.css" />
-    <script src="https://cdn.rawgit.com/justindujardin/ng2-material/8ee9cee/node_modules/es6-shim/es6-shim.js"></script>
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/ng2-material.css">
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/font.css">
     
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
         map: {
             app: "./app",
-            "ng2-material":"https://cdn.rawgit.com/justindujardin/ng2-material/8ee9cee/ng2-material"
+            "ng2-material":"node_modules/ng2-material"
             },
         packages: {        
           app: {
@@ -36,7 +35,6 @@
 
   </head>
 
-  <!-- 3. Display the application -->
   <body>
     <todoApp>Loading...</todoApp>
   </body>

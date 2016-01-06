@@ -27,13 +27,14 @@ System.register(['angular2/core', 'ng2-material/all'], function(exports_1) {
                 }
                 //todolist by two way bind  
                 //   onSubmit(todo?) {
-                //       this.todoArr.push(this.model.todo) 
-                //        console.log(this.todoArr);
-                //      }
+                //       this.todoArr.push(this.model.todo)
+                //       console.log(this.todoArr);
+                //   }
                 //todolist by one way bind  
                 TodoComponent.prototype.onSubmit = function (todo) {
                     this.todoArr.push(todo);
                     console.log(this.todoArr);
+                    this.counter = this.todoArr.length;
                 };
                 TodoComponent.prototype.exists = function (value) {
                     if (value) {
@@ -48,7 +49,7 @@ System.register(['angular2/core', 'ng2-material/all'], function(exports_1) {
                     core_1.Component({
                         selector: 'todo',
                         templateUrl: 'app/todo.html',
-                        directives: [all_1.MATERIAL_DIRECTIVES],
+                        directives: [all_1.MATERIAL_DIRECTIVES, all_1.MdInputContainer],
                     }), 
                     __metadata('design:paramtypes', [])
                 ], TodoComponent);

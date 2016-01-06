@@ -12,7 +12,6 @@ System.register(['angular2/platform/browser', './app', 'ng2-material/all'], func
                 all_1 = all_1_1;
             }],
         execute: function() {
-            all_1.setBaseUrl('https://cdn.rawgit.com/justindujardin/ng2-material/8ee9cee/');
             browser_1.bootstrap(app_1.AppComponent, [all_1.MATERIAL_PROVIDERS])
                 .catch(function (err) { return console.error(err); });
         }
